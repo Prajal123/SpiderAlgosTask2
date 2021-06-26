@@ -1,0 +1,32 @@
+Ans A:- In question 1, we have to find the maximum length of string in which sequence of brackets are correct.So first I take input the length of string as input and then the string 
+Then I take variables as count1 and count2 which increases when < and > increases respectively. whenever count2 is greater than count1 then I applied break statement and if It is 
+not greater then I applied some more conditions to check to find the maximum length of string which is correct. I took count3 and count4 as another variabels and assigned a intial
+value of 0. When the < bracket increases then I increase the count3 and when > bracket increases then I increse count4. When the value of count3 and count4 are equal then it makes
+the correct bracket sequence. And then I add 2*count3 in count1 which is initially assigned 0 and then I assign count3 and count4 as 0 and repeated the process till the last element
+of the array.Finally I printed the count1 which is the required length of the correct sequence of the brackets.
+
+Ans B:-
+In second question, we have to find the array whose i-th element will be the maximum of i-th and i+1-th element of an another array which is given. So the concept which I applied 
+in this case is that the first element is similar to the first element of the another array but the second element is minimum of the second and third element of the array, so I 
+made a another function which finds the minimum of the two numbers and the last element of the array is also similar of the last element of the another array.
+Then I printed the array .
+
+
+Ans C:-
+in this question , I have to find the maximum number of ways by which we can reach the top . FOr this First I take the input of stairs and then the no of broken stairs and then
+the position of broken stairs. I divided the problem in m ways that in each way I allocated a dynamic memory to an another array whose size is position of next broken stair - position
+of previous step and if this is one then I printed 0. If this is not one, then by using fibonacci I found no of ways and then assign to an another array count[m+1] and after finding
+all the elements of counts , I multiplied all the counts and finally printed the answer. 
+
+Ans D:-
+In this question , we have to take a array of n+1 size whose elements are similar of the indices of the array. Then we have to take no of queries as input and after that each query
+as input . In a query , we have to take left index and right index and a value as input and add that value to the indices which lie between the left and right index of the array
+inclusive of both the indices. FOr this , I first made the array of n+1 size and assign the values and then I took a for loop for queries and then I add a another loop for each 
+query which goes from left index to right index to add the value. After that I took a for loop for finding the maximum element in the array. I take a max element an assign the 
+value 0 and changed the max value when any index other than 0 have greater value than the value at index 0 . Finally , I printed the max value.
+
+Ans E:-
+
+It is the same question as D but in this question we have to consider time complexity. So i did this question by prefix sum method. At first I assign all the array elements as 1.
+And then I added the previous elements to the array and after adding the previous elements I added the val in the range of l to r to every query. Then by applying previous sum 
+method to find maximum element of the array then I printed the maximum element.
