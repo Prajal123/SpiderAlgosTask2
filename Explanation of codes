@@ -14,9 +14,9 @@ Then I printed the array .
 
 Ans C:-
 in this question , I have to find the maximum number of ways by which we can reach the top . FOr this First I take the input of stairs and then the no of broken stairs and then
-the position of broken stairs. I divided the problem in m ways that in each way I allocated a dynamic memory to an another array whose size is position of next broken stair - position
-of previous step and if this is one then I printed 0. If this is not one, then by using fibonacci I found no of ways and then assign to an another array count[m+1] and after finding
-all the elements of counts , I multiplied all the counts and finally printed the answer. 
+the position of broken stairs. I Took a variable j=0 and then I took a array of n+1 elements whose first element I set 1 and then for other elements I applied a for loop which 
+goes from 1 to n and then in each loop I compare the j value with total no of break stairs and i value with the postion of the broken step and if this condition is false then I assign
+the value of other elements by fibonacci. At last By using the fibonacci I got the  no of ways and finallu I printed it.
 
 Ans D:-
 In this question , we have to take a array of n+1 size whose elements are similar of the indices of the array. Then we have to take no of queries as input and after that each query
