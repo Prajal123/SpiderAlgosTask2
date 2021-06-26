@@ -1,0 +1,58 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main(){
+int t;
+cin>>t;
+ string str[t];
+ for(int i=0;i<t;i++){
+    cin>>str[i];
+ }
+int count1,count2,count3,count4;
+ for(int i=0;i<t;i++){
+         count1=0;
+        count2=0;
+    for(int j=0;str[i][j]!='\0';j++){
+
+        if(str[i][j]=='<'){
+            count1+=2;
+        }
+        else
+        {
+            count2+=2;
+        }
+
+        if(count1<count2){
+                cout<<count1<<endl;
+            break;
+        }
+    }
+    if(count1==count2){
+        cout<<count1<<endl;
+    }
+
+if(count1-count2>=2){
+         count1=0;
+            count3=0;
+            count4=0;
+    for(int j=0;str[i][j]!='\0';j++){
+
+      if(str[i][j]=='<'){
+        count3++;
+      }
+      else{
+        count4++;
+      }
+      if(count3==count4){
+            count1+=2*count3;
+        count3=0;
+        count4=0;
+      }
+    }
+    cout<<count1<<endl;
+
+ }
+ }
+
+  return 0;
+}
