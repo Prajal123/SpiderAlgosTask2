@@ -4,59 +4,35 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int main(){
-int n,m;
-cin>>n>>m;
-int *a,b[m];
-int i,j;
-for( i=0;i<m;i++){
-    cin>>b[i];
-}
-int count[m+1];
 
-int l=n+1-b[m-1];
- if(b[0]!=1){
-a=(int*)malloc(b[0]*sizeof(int));
-        a[0]=1;
-        a[1]=1;
-for(i=2;i<b[0];i++){
-    a[i]=a[i-2]+a[i-1];
+
+int main() {
+    int n;
+    cin>>n;
+    int m;
+    cin>>m;
+    int a[m];
+    for(int i=0;i<m;i++){
+        cin>>a[i];
+    }
+   long int b[n+1]; 
+    b[0]=1;
+    int j=0;
     
-}
-     count[0]=a[i-1];
- }
-    else{
-        count[0]=1;
+    for(int i=1;i<=n;i++){
+     if(j<m && i==a[j]){
+         b[i]=0;
+         j++;
+     }
+        else{
+            if(i>1){
+                b[i]=(b[i-1]%1000000007+b[i-2]%1000000007)%1000000007;
+            }
+            else{
+                b[i]=b[i-1];
+            }
+        }
     }
-
-int q=1;
-for( i=1;i<m;i++){
-    a=(int*)malloc((b[i]-b[i-1])*sizeof(int));
-        a[0]=0;
-        a[1]=1;
-        if(q<b[i]-b[i-1]){
-    for( j=2;j<b[i]-b[i-1];j++){
-       a[j]=a[j-1]+a[j-2];
-    }
-    count[i]=a[j-1];
-}
-else{
-     cout<<"0";
+    cout<<b[n]<<endl;
     return 0;
 }
-}
-
-a=(int*)malloc(l*sizeof(int));
-a[0]=0;
-    a[1]=1;
-for( i=2;i<l;i++){
-    a[i]=a[i-2]+a[i-1];
-}
-count[m]=a[i-1];
-
- long long int total=1;
-for( i=0;i<m+1;i++){
-    total=total*count[i];
-}
-cout<<total%1000000007<<endl;
-return 0;}
