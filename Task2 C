@@ -1,0 +1,62 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main(){
+int n,m;
+cin>>n>>m;
+int *a,b[m];
+int i,j;
+for( i=0;i<m;i++){
+    cin>>b[i];
+}
+int count[m+1];
+
+int l=n+1-b[m-1];
+ if(b[0]!=1){
+a=(int*)malloc(b[0]*sizeof(int));
+        a[0]=1;
+        a[1]=1;
+for(i=2;i<b[0];i++){
+    a[i]=a[i-2]+a[i-1];
+    
+}
+     count[0]=a[i-1];
+ }
+    else{
+        count[0]=1;
+    }
+
+int q=1;
+for( i=1;i<m;i++){
+    a=(int*)malloc((b[i]-b[i-1])*sizeof(int));
+        a[0]=0;
+        a[1]=1;
+        if(q<b[i]-b[i-1]){
+    for( j=2;j<b[i]-b[i-1];j++){
+       a[j]=a[j-1]+a[j-2];
+    }
+    count[i]=a[j-1];
+}
+else{
+     cout<<"0";
+    return 0;
+}
+}
+
+a=(int*)malloc(l*sizeof(int));
+a[0]=0;
+    a[1]=1;
+for( i=2;i<l;i++){
+    a[i]=a[i-2]+a[i-1];
+}
+count[m]=a[i-1];
+
+ long long int total=1;
+for( i=0;i<m+1;i++){
+    total=total*count[i];
+}
+cout<<total%1000000007<<endl;
+return 0;}
